@@ -1,9 +1,12 @@
 import { observer } from "mobx-react-lite";
 import { pokemonStore } from "../dependencies";
-import { Pokemon } from "@/core/entities/pokemon";
+import {
+  getAllPokemonVM,
+  PokemonVM,
+} from "@/adapters/primary/view-models/get-all-pokemon-vm/getAllPokemonVM";
 
 const App = observer(() => {
-  const pokemons: Pokemon[] = pokemonStore.pokemon;
+  const pokemons: PokemonVM[] = getAllPokemonVM(pokemonStore);
 
   return (
     <>
