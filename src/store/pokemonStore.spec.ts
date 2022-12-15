@@ -1,4 +1,5 @@
 import { PokemonStore } from "./pokemonStore";
+import { mockPokemonList } from "@/mock/data";
 
 describe("Pokemon store", () => {
   const store: PokemonStore = new PokemonStore();
@@ -10,7 +11,7 @@ describe("Pokemon store", () => {
     expect(store.pokemon).toEqual([]);
   });
   it("should set pokemon", () => {
-    store.setAllPokemon([{ id: 1 }]);
-    expect(store.pokemon).toEqual([{ id: 1 }]);
+    store.setAllPokemon(mockPokemonList);
+    expect(store.pokemon).toEqual(mockPokemonList);
   });
 });

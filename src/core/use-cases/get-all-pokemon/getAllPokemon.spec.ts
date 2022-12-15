@@ -1,6 +1,7 @@
 import { InMemoryPokemonGateway } from "@/adapters/secondary/inMemoryPokemonGateway";
 import { getAllPokemon } from "@/core/use-cases/get-all-pokemon/getAllPokemon";
 import { PokemonStore } from "@/store/pokemonStore";
+import { mockPokemonList } from "@/mock/data";
 
 describe("Get all pokemon", () => {
   const gateway: InMemoryPokemonGateway = new InMemoryPokemonGateway();
@@ -24,15 +25,15 @@ describe("Get all pokemon", () => {
 
   describe("when there are pokemon", function () {
     it("should return the same pokemon from the gateway", async () => {
-      await gateway.set([{ id: 1 }]);
+      await gateway.set(mockPokemonList);
       const pokemonFromGateway = getAllPokemon(gateway, store);
-      expect(pokemonFromGateway).resolves.toEqual([{ id: 1 }]);
+      expect(pokemonFromGateway).resolves.toEqual(mockPokemonList);
     });
     it("should return the same pokemon from the store", async () => {
-      await gateway.set([{ id: 1 }]);
+      await gateway.set(mockPokemonList);
       await getAllPokemon(gateway, store);
       const pokemonFromStore = store.pokemon;
-      expect(pokemonFromStore).toEqual([{ id: 1 }]);
+      expect(pokemonFromStore).toEqual(mockPokemonList);
     });
   });
 });

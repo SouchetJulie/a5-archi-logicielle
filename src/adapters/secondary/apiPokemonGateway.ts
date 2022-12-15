@@ -10,6 +10,7 @@ export class ApiPokemonGateway implements PokemonGateway {
           query {
             pokemon_v2_pokemon {
               id
+              name
             }
           }`,
       }),
@@ -21,10 +22,12 @@ export class ApiPokemonGateway implements PokemonGateway {
   private convertData(data: ApiPokemon): Pokemon {
     return {
       id: data.id,
+      name: data.name,
     };
   }
 }
 
 interface ApiPokemon {
   id: number;
+  name: string;
 }

@@ -1,6 +1,7 @@
 import { InMemoryPokemonGateway } from "@/adapters/secondary/inMemoryPokemonGateway";
 import { PokemonStore } from "@/store/pokemonStore";
 import { setAllPokemon } from "@/core/use-cases/set-all-pokemon/setAllPokemon";
+import { mockPokemonList } from "@/mock/data";
 
 describe("Set all pokemon", function () {
   const gateway: InMemoryPokemonGateway = new InMemoryPokemonGateway();
@@ -12,10 +13,10 @@ describe("Set all pokemon", function () {
 
   it("should set the pokemon in the store", async function () {
     // Setup
-    await gateway.set([{ id: 1 }]);
+    await gateway.set(mockPokemonList);
     // Act
     await setAllPokemon(gateway, store);
     // Assert
-    expect(store.pokemon).toEqual([{ id: 1 }]);
+    expect(store.pokemon).toEqual(mockPokemonList);
   });
 });

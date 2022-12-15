@@ -10,7 +10,7 @@ const App = observer(() => {
       <h1>Pokemon</h1>
       <ul>
         {pokemons.map((pokemon) => (
-          <li key={pokemon.id}>{pokemon.id}</li>
+          <li key={pokemon.id}>{pokemon.name}</li>
         ))}
       </ul>
     </>
