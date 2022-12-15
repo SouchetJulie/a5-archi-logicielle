@@ -16,10 +16,10 @@ export class ApiPokemonGateway implements PokemonGateway {
       }),
     })
       .then((response) => response.json())
-      .then((json) => json.data.pokemon_v2_pokemon.map(this.convertData));
+      .then((json) => json.data.pokemon_v2_pokemon.map(this.convertToPokemon));
   }
 
-  private convertData(data: ApiPokemon): Pokemon {
+  private convertToPokemon(data: ApiPokemon): Pokemon {
     return {
       id: data.id,
       name: data.name,
