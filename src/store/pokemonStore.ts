@@ -2,17 +2,20 @@ import { makeAutoObservable } from "mobx";
 import { Pokemon } from "@/core/entities/pokemon";
 
 export class PokemonStore {
+  get pokemon(): Pokemon[] {
+    return this._pokemon;
+  }
   constructor() {
     makeAutoObservable(this);
   }
 
-  pokemon: Pokemon[] = [];
+  private _pokemon: Pokemon[] = [];
 
   setAllPokemon(pokemon: Pokemon[]) {
-    this.pokemon = pokemon;
+    this._pokemon = pokemon;
   }
 
   reset() {
-    this.pokemon = [];
+    this._pokemon = [];
   }
 }

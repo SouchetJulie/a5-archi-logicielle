@@ -36,4 +36,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-src/adapters/primary/next/next-env.d.ts
+src/adapters/primary/react/next-env.d.ts

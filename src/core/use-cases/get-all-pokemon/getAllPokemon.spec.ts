@@ -21,4 +21,18 @@ describe("Get all pokemon", () => {
       expect(pokemonFromStore).toEqual([]);
     });
   });
+
+  describe("when there are pokemon", function () {
+    it("should return the same pokemon from the gateway", async () => {
+      await gateway.set([{ id: 1 }]);
+      const pokemonFromGateway = getAllPokemon(gateway, store);
+      expect(pokemonFromGateway).resolves.toEqual([{ id: 1 }]);
+    });
+    it("should return the same pokemon from the store", async () => {
+      await gateway.set([{ id: 1 }]);
+      await getAllPokemon(gateway, store);
+      const pokemonFromStore = store.pokemon;
+      expect(pokemonFromStore).toEqual([{ id: 1 }]);
+    });
+  });
 });
