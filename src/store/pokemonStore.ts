@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { Pokemon } from "../core/entities/pokemon";
+import { Pokemon } from "@/core/entities/pokemon";
 
 export class PokemonStore {
   constructor() {
