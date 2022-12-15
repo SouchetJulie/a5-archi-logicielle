@@ -2,22 +2,22 @@ import { InMemoryPokemonGateway } from "@/adapters/secondary/inMemoryPokemonGate
 import { getAllPokemon } from "@/core/use-cases/get-all-pokemon/getAllPokemon";
 import { PokemonStore } from "@/store/pokemonStore";
 
-describe("Get all pokemon", function () {
-  const pokemonGateway: InMemoryPokemonGateway = new InMemoryPokemonGateway();
-  const pokemonStore: PokemonStore = new PokemonStore();
+describe("Get all pokemon", () => {
+  const gateway: InMemoryPokemonGateway = new InMemoryPokemonGateway();
+  const store: PokemonStore = new PokemonStore();
   beforeEach(() => {
-    pokemonGateway.reset();
-    pokemonStore.reset();
+    gateway.reset();
+    store.reset();
   });
 
-  describe("when there are no pokemon", function () {
-    it("should return [] from the gateway", function () {
-      const pokemonFromGateway = getAllPokemon(pokemonGateway);
+  describe("when there are no pokemon", () => {
+    it("should return [] from the gateway", () => {
+      const pokemonFromGateway = getAllPokemon(gateway, store);
       expect(pokemonFromGateway).resolves.toEqual([]);
     });
-    it("should return [] from the store", async function () {
-      await getAllPokemon(pokemonGateway);
-      const pokemonFromStore = pokemonStore.pokemon;
+    it("should return [] from the store", async () => {
+      await getAllPokemon(gateway, store);
+      const pokemonFromStore = store.pokemon;
       expect(pokemonFromStore).toEqual([]);
     });
   });

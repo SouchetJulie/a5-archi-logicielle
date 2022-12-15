@@ -8,8 +8,8 @@ export class PokemonStore {
 
   pokemon: Pokemon[] = [];
 
-  addPokemon(pokemon: Pokemon) {
-    this.pokemon.push(pokemon);
+  setAllPokemon(pokemon: Pokemon[]) {
+    this.pokemon = pokemon;
   }
 
   reset() {

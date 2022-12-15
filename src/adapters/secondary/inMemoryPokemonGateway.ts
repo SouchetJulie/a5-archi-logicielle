@@ -8,8 +8,9 @@ export class InMemoryPokemonGateway implements PokemonGateway {
     return this.pokemon;
   }
 
-  public addPokemon(pokemon: Pokemon) {
-    this.pokemon.push(pokemon);
+  public async set(pokemon: Pokemon[]): Promise<Pokemon[]> {
+    this.pokemon = pokemon;
+    return this.pokemon;
   }
 
   public reset() {
