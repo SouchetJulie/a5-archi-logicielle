@@ -11,6 +11,7 @@ export class ApiPokemonGateway implements PokemonGateway {
             pokemon_v2_pokemon {
               id
               name
+              pokemon_species_id
             }
           }`,
       }),
@@ -23,6 +24,7 @@ export class ApiPokemonGateway implements PokemonGateway {
     return {
       id: data.id,
       name: data.name,
+      speciesId: data.pokemon_species_id,
     };
   }
 }
@@ -30,4 +32,5 @@ export class ApiPokemonGateway implements PokemonGateway {
 interface ApiPokemon {
   id: number;
   name: string;
+  pokemon_species_id: number;
 }
