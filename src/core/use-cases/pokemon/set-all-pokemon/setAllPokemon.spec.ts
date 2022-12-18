@@ -1,5 +1,5 @@
 import { InMemoryPokemonGateway } from "@/adapters/secondary/pokemon/inMemoryPokemonGateway";
-import { PokemonStore } from "@/store/pokemonStore";
+import { PokemonStore } from "@/store/pokemon/pokemonStore";
 import { setAllPokemon } from "@/core/use-cases/pokemon/set-all-pokemon/setAllPokemon";
 import { mockPokemonList } from "@/mock/data";
 

@@ -1,6 +1,6 @@
 import { InMemoryPokemonGateway } from "@/adapters/secondary/pokemon/inMemoryPokemonGateway";
 import { getAllPokemon } from "@/core/use-cases/pokemon/get-all-pokemon/getAllPokemon";
-import { PokemonStore } from "@/store/pokemonStore";
+import { PokemonStore } from "@/store/pokemon/pokemonStore";
 import { mockPokemonList } from "@/mock/data";
 
 describe("Get all pokemon", () => {

@@ -1,6 +1,6 @@
 import { PokemonGateway } from "@/core/gateways/pokemonGateway";
 import { Pokemon } from "@/core/entities/pokemon";
-import { PokemonStore } from "@/store/pokemonStore";
+import { PokemonStore } from "@/store/pokemon/pokemonStore";
 
 export const getAllPokemon = async (
   gateway: PokemonGateway,

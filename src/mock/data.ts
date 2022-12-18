@@ -7,12 +7,27 @@ export const mockPokemonList: Pokemon[] = [
     name: "Bulbasaur",
     speciesId: 1,
   },
+  {
+    id: 2,
+    name: "Ivysaur",
+    speciesId: 1,
+  },
+  {
+    id: 3,
+    name: "Pikachu",
+    speciesId: 2,
+  },
 ];
 
 export const mockSpeciesList: Species[] = [
   {
     id: 1,
     name: "Bulbasaur",
-    genderRatio: 0.5,
+    genderRatio: 12.5,
+  },
+  {
+    id: 2,
+    name: "Pikachu",
+    genderRatio: 50,
   },
 ];

@@ -1,4 +1,4 @@
-import { PokemonStore } from "@/store/pokemonStore";
+import { PokemonStore } from "@/store/pokemon/pokemonStore";
 import { ApiPokemonGateway } from "@/adapters/secondary/pokemon/apiPokemonGateway";
 import { setAllPokemon } from "@/core/use-cases/pokemon/set-all-pokemon/setAllPokemon";
 
