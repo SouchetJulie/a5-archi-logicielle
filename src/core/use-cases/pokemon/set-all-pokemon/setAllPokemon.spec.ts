@@ -1,6 +1,6 @@
-import { InMemoryPokemonGateway } from "@/adapters/secondary/inMemoryPokemonGateway";
+import { InMemoryPokemonGateway } from "@/adapters/secondary/pokemon/inMemoryPokemonGateway";
 import { PokemonStore } from "@/store/pokemonStore";
-import { setAllPokemon } from "@/core/use-cases/set-all-pokemon/setAllPokemon";
+import { setAllPokemon } from "@/core/use-cases/pokemon/set-all-pokemon/setAllPokemon";
 import { mockPokemonList } from "@/mock/data";
 
 describe("Set all pokemon", function () {
