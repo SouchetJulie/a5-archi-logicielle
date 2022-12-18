@@ -1,5 +1,5 @@
 import { InMemorySpeciesGateway } from "@/adapters/secondary/species/inMemorySpeciesGateway";
-import { getAllSpecies } from "@/core/use-cases/species/getAllSpecies";
+import { getAllSpecies } from "@/core/use-cases/species/get-all-species/getAllSpecies";
 import { SpeciesStore } from "@/store/species/speciesStore";
 import { mockSpeciesList } from "@/mock/data";
 
