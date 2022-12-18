@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+}
+
+.card {
+    width: 10%;
+    padding: 2em;
+    margin: 1em;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.progress.container {
+    flex-wrap: nowrap;
+}
+
+.progress .male {
+    background: lightblue;
+    border-bottom-right-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.progress .female {
+    background: lightpink;
+    border-bottom-left-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+}

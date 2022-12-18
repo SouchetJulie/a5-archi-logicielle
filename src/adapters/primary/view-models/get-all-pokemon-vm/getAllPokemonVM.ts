@@ -25,7 +25,12 @@ export const getAllPokemonVM = (
     // Replace the placeholder species data with the actual species data
     pokemonData.forEach((currentPokemon: Pokemon, index: number) => {
       if (currentPokemon.speciesId === species.id) {
-        pokemon[index].species = species;
+        pokemon[index].species = {
+          id: species.id,
+          // capitalize the first letter
+          name: species.name.charAt(0).toUpperCase() + species.name.slice(1),
+          genderRatio: species.genderRatio,
+        };
       }
     });
   });
@@ -35,7 +40,8 @@ export const getAllPokemonVM = (
 
 const convertToPokemonVM = (pokemon: Pokemon): PokemonVM => ({
   id: pokemon.id,
-  name: pokemon.name,
+  // capitalize the first letter
+  name: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
   species: {
     id: -1,
     name: "__placeholder__",
